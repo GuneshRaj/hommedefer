@@ -1,0 +1,24 @@
+[package]
+name = "hommedefer"
+version = "0.1.0"
+edition = "2021"
+authors = ["Gunesh Raj <gunesh.raj@gmail.com>"]
+description = "A Rust web framework with JSP-like template processing"
+
+[dependencies]
+rocket = { version = "0.5.1", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde-xml-rs = "0.6"
+clap = { version = "4.4", features = ["derive"] }
+regex = "1.10"
+tokio = { version = "1.35", features = ["full"] }
+notify = "6.1"
+tempfile = "3.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
